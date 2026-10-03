@@ -1,0 +1,17 @@
+# secrets
+.env
+.env.*
+*.pem
+*.key
+id_rsa*
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+# node
+node_modules/
+# os
+.DS_Store
+Thumbs.db

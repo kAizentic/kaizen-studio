@@ -1,0 +1,42 @@
+Copyright (c) 2026 Michael Ryan McConnell. All rights reserved.
+
+SOURCE-AVAILABLE LICENSE
+
+This software is made publicly readable for evaluation, study, and reference.
+It is NOT open source, and no open-source license is granted.
+
+GRANT
+
+You are permitted to:
+
+  1. View, read, and study this source code.
+  2. Reproduce short excerpts for the purpose of discussion, review, teaching,
+     or commentary, with attribution.
+
+RESTRICTIONS
+
+Without prior written permission from the copyright holder, you may NOT:
+
+  1. Redistribute this software or any substantial portion of it, in source or
+     compiled form.
+  2. Use this software, or any substantial portion of it, in a commercial
+     product or service.
+  3. Create or distribute derivative works based on it.
+  4. Remove or alter this notice.
+
+THIRD-PARTY MATERIAL
+
+This repository contains only material authored by the copyright holder.
+analyzers/motion-checks.mjs is an independent re-implementation of an idea from
+AThevon/genjutsu (MIT); no upstream code is included.
+
+NO WARRANTY
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN
+CONNECTION WITH THIS SOFTWARE OR ITS USE.
+
+For permission beyond this license, contact the copyright holder.
