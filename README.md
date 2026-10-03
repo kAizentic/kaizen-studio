@@ -54,6 +54,43 @@ to one that never started, and a throttled cross-site iframe will freeze a previ
 looks composed. The rig verifies motion by sampling computed style and position after a settle
 window. `FAILURE_LOG.md` has the two cases that made this a rule.
 
+## How this differs
+
+There are good tools nearby. This is where the line falls.
+
+**Knob panels** ([Leva](https://github.com/pmndrs/leva), [Tweakpane](https://github.com/cocopon/tweakpane),
+[lil-gui](https://github.com/georgealways/lil-gui)) give you live controls, but the tuned values stay
+in the browser. Copying them back into code is your job. The rig's Apply writes them for you.
+
+**Timeline editors** ([Theatre.js](https://github.com/theatre-js/theatre)) are built for authoring:
+you build the animation in the editor and load its state at runtime. The rig works the other way
+round. The animation is already written in code, and the bench only drives its clock and tunes its
+props.
+
+**Write-back tools** are the closest relatives, and each makes a different trade:
+
+| | Setup in your component | What gets written | Engine |
+|---|---|---|---|
+| [tweakr](https://github.com/angelolibero/tweakr) | declare levers with `defineTweaks()` | the literal inside the component | React + Vite |
+| [transitions.dev `refine`](https://github.com/Jakubantalik/transitions.dev/tree/main/refine) | none (injected into the running app) | transition timings, by a coding agent | CSS / Motion transitions |
+| [loupe](https://github.com/arinze-clinton/loupe-motion) | wrap scenes in a `TimelineProvider` | notes for you or an agent, not code | Framer Motion |
+| **animation-rig** | none (knobs are read from existing props) | **call-site props** in a `<Component>.usage.tsx`, never the component's defaults | GSAP, canvas, WebGL; time *or* scroll playhead |
+
+Writing to the call site is deliberate. A component in a library has many callers, and a tune is
+almost always about one of them, so it belongs where that caller lives.
+
+**Motion linters.** [react-doctor](https://github.com/millionco/react-doctor) flags layout-property
+animation and permanent `will-change` in React (on Motion element props and `element.animate()` calls), and
+[stylelint-high-performance-animation](https://github.com/kristerkari/stylelint-high-performance-animation)
+does the same for CSS. `motion-checks` reads the vars inside GSAP tween calls (`gsap.to/from/fromTo`),
+which neither covers. It also adds per-component duration and easing sprawl, and every check ships
+with a legitimate twin it must not flag.
+
+**Prop inference.** [react-docgen](https://github.com/reactjs/react-docgen) (what Storybook uses) is
+the general-purpose version of `infer-controls` and handles far more TypeScript. `infer-controls`
+parses one component shape exactly and adds what a tuning panel needs on top: units read from prop
+names, a range guess, and whether the prop is safe to expose.
+
 ## Credits
 
 `analyzers/motion-checks.mjs` takes its central idea, that motion hygiene is greppable, from
