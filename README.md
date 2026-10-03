@@ -5,14 +5,14 @@ the real running code, then lint them for the motion defects that are easy to sh
 
 Two parts:
 
-- **`skills/animation-rig/`** — a live tuning bench for any animation. It drives the real component
+- **`skills/animation-rig/`** - a live tuning bench for any animation. It drives the real component
   through a normalized `0→1` clock (time loop or scroll, swappable), auto-wires knobs from the
   component's props, and on **Apply** writes the tune back as call-site props. It never touches the
   component's own defaults.
-- **`analyzers/`** — zero-dependency static checks over React/TSX components: motion hygiene,
+- **`analyzers/`** - zero-dependency static checks over React/TSX components: motion hygiene,
   prop-to-control inference, and the component's "seam" (the interface a caller changes from outside).
 
-The components these tools were built against are on the live demo site:
+Some components built with these tools:
 **[mrmichael-parts-bin.netlify.app](https://mrmichael-parts-bin.netlify.app/)**.
 
 ## What's here
