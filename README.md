@@ -54,9 +54,7 @@ to one that never started, and a throttled cross-site iframe will freeze a previ
 looks composed. The rig verifies motion by sampling computed style and position after a settle
 window. `FAILURE_LOG.md` has the two cases that made this a rule.
 
-## How this differs
-
-There are good tools nearby. This is where the line falls.
+## Unique Characteristics & Features
 
 **Knob panels** ([Leva](https://github.com/pmndrs/leva), [Tweakpane](https://github.com/cocopon/tweakpane),
 [lil-gui](https://github.com/georgealways/lil-gui)) give you live controls, but the tuned values stay
