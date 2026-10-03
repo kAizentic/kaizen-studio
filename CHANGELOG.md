@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-03 `6c03c23..48e5841`
+
+### Added
+- README: a "How this differs" section placing the rig and analyzers next to knob panels, timeline editors, write-back tools, motion linters and prop inference.
+
 ## 2026-10-03 `root..9a1e513`
 
 ### Added
